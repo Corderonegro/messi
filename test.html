@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jugadores Mejores Que Messi</title>
+
+
+<meta name="description" content="Jugadores Mejores Que Messi es un libro sobre una pregunta imposible." />
+
+<link rel="canonical" href="https://jugadoresmejoresquemessi.com/" />
+
+<meta property="og:title" content="Jugadores Mejores Que Messi" />
+<meta property="og:description" content="Un libro sobre la imposibilidad de comparar a Messi." />
+<meta property="og:type" content="book" />
+<meta property="og:image" content="https://jugadoresmejoresquemessi.com/cover.png" />
+<meta property="og:url" content="https://jugadoresmejoresquemessi.com/" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Jugadores Mejores Que Messi",
+  "description": "Un libro sobre la imposibilidad de comparar a Lionel Messi.",
+  "author": {
+    "@type": "Person",
+    "name": "Fran Llambí"
+  },
+  "about": [
+    {
+      "@type": "Person",
+      "name": "Lionel Messi",
+      "sameAs": "https://es.wikipedia.org/wiki/Lionel_Messi"
+    },
+    {
+      "@type": "Thing",
+      "name": "Fútbol"
+    },
+    {
+      "@type": "Thing",
+      "name": "Comparación deportiva"
+    }
+  ],
+  "genre": ["Ensayo conceptual", "Fútbol", "Arte conceptual"],
+  "inLanguage": "es",
+  "bookFormat": "Paperback",
+  "isAccessibleForFree": false,
+
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "Formato",
+      "value": "Objeto editorial conceptual"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "Uso cultural",
+      "value": "Regalo, objeto coleccionable, pieza conversacional"
+    }
+  ]
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Existe algún jugador mejor que Messi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El libro responde a esa pregunta de manera determinante."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Ronaldo es Mejor que Messi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El libro deja en claro todo tipo de dudas acerca de quien es mejor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué comprar el libro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porque es una respuesta categórica a quien es mejor que Messi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Es un libro sobre Messi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Si, es es un libro sobre Messi."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+.section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+/* HERO */
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero img {
+  width: 96%;
+  max-width: 420px;
+  transition: opacity 0.25s linear;
+}
+
+/* SCENE */
+#scene {
+  height: 360vh;
+}
+
+/* MESSI */
+#messi {
+  position: fixed;
+  left: 50%;
+  transform-origin: center bottom;
+  transform: translateX(-50%) scale(0.06);
+  max-height: 90vh;
+  z-index: 10;
+  will-change: transform, bottom;
+}
+
+/* FINAL */
+#final {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 48px;
+  overflow: hidden;
+}
+
+/* LIBRO */
+#cover {
+  position: absolute;
+  left: 50%;
+  bottom: 120px;
+  transform: translate(-50%, 120vh);
+  width: 90%;
+  max-width: 320px;
+  z-index: 1;
+  will-change: transform;
+}
+
+/* BOTÓN */
+#buy {
+  position: relative;
+  margin-top: auto;
+  width: 100%;
+  max-width: 320px;
+  padding: 18px 0;
+  font-size: 16px;
+  font-weight: bold;
+  border: 2px solid #000;
+  background: transparent;
+  cursor: pointer;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  #hero img { max-width: 1000px; }
+  #cover { max-width: 420px; }
+  #buy { width: auto; padding: 18px 36px; }
+}
+</style>
+</head>
+
+<body>
+
+<section id="hero" class="section">
+  <img src="title.png" alt="Jugadores Mejores Que Messi" role="img">
+</section>
+
+<section id="scene" class="section">
+  <img id="messi" src="messi.png" alt="Imágen minimalista de Lionel Messi de espaldas"
+     role="img">
+</section>
+
+<section id="final" class="section">
+  <img id="cover" src="cover.png" alt="Portada del libro Jugadores Mejores Que Messi en blanco" role="img">
+<button id="buy" aria-label="Comprar el libro Jugadores Mejores Que Messi">
+  COMPRAR
+</button>
+</section>
+
+<script>
+const hero = document.getElementById("hero");
+const messi = document.getElementById("messi");
+const scene = document.getElementById("scene");
+const finalSection = document.getElementById("final");
+const cover = document.getElementById("cover");
+
+/* easing */
+function easeOutCubic(t) {
+  return 1 - Math.pow(1 - t, 3);
+}
+
+/* escalas */
+const START_SCALE = 0.06;
+const PEAK_SCALE  = 0.45;
+const END_SCALE   = START_SCALE * 2;
+
+/* posiciones */
+const START_BOTTOM = window.innerHeight * 0.18; // 18% viewport
+const FINAL_BOTTOM = 180; // 120 libro + 60 offset
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const sceneTop = scene.offsetTop;
+  const sceneHeight = scene.offsetHeight;
+  const finalTop = finalSection.offsetTop;
+
+  /* fade hero */
+  hero.style.opacity = Math.max(1 - scrollY / 450, 0);
+
+  /* progreso global 0–1 */
+  const globalProgress = Math.min(
+    Math.max(scrollY / (finalTop + window.innerHeight), 0),
+    1
+  );
+
+  /* EASING GLOBAL FINAL */
+  const easedGlobal = easeOutCubic(globalProgress);
+
+  /* POSICIÓN CONTINUA DE MESSI */
+  const bottom =
+    START_BOTTOM + (FINAL_BOTTOM - START_BOTTOM) * easedGlobal;
+
+  messi.style.bottom = `${bottom}px`;
+
+  /* ESCALA CONTINUA */
+  let scale;
+  if (globalProgress < 0.5) {
+    scale =
+      START_SCALE +
+      (globalProgress / 0.5) * (PEAK_SCALE - START_SCALE);
+  } else {
+    const t = (globalProgress - 0.5) / 0.5;
+    scale =
+      PEAK_SCALE -
+      easeOutCubic(Math.min(t, 1)) *
+        (PEAK_SCALE - END_SCALE);
+  }
+
+  messi.style.transform = `
+    translateX(-50%)
+    scale(${scale})
+  `;
+
+  /* LIBRO SUBE DETRÁS */
+  if (scrollY > finalTop - window.innerHeight) {
+    const raw = Math.min(
+      (scrollY - (finalTop - window.innerHeight)) /
+        window.innerHeight,
+      1
+    );
+
+    const eased = easeOutCubic(raw);
+
+    cover.style.transform = `
+      translate(-50%, ${(1 - eased) * 120}vh)
+    `;
+  }
+});
+</script>
+
+<div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+  Jugadores Mejores Que Messi es un libro conceptual que parte de una premisa simple:
+  puede existir un libro sobre jugadores mejores que Messi, pero no debería tener contenido,
+  porque no existen jugadores mejores que Messi.
+
+  El libro funciona como un statement cultural sobre fútbol moderno, idolatría y comparación.
+  Es una pieza editorial minimalista que combina humor, diseño y fanatismo,
+  pensada como objeto artístico y no como libro tradicional.
+
+  El proyecto propone un libro vacío pero significativo,
+  que genera conversación, identificación inmediata y lectura simbólica.
+  Un libro que no necesita palabras para expresar una idea compartida
+  dentro de la cultura del fútbol contemporáneo.
+  
+  No existen Jugadores Mejores Que Messi.
+
+</div>
+
+</body>
+</html>
