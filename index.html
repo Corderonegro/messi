@@ -190,16 +190,25 @@ body {
 }
 
 /* BOTÓN */
-/* BOTÓN CORREGIDO */
+/* BOTÓN AUTO-ADAPTABLE */
 #buy {
   position: relative;
   margin-top: auto;
-  width: 90%;          /* Ocupa casi todo el ancho en mobile */
-  max-width: 300px;    /* Límite para que no se vea gigante */
-  padding: 18px 0;
-  font-size: 14px;     /* Bajamos a 14px para que entre "PRÓXIMAMENTE" */
+  
+  /* CLAVE: Cambiamos width fijo por inline-flex y padding */
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  width: auto;           /* El botón ya no intenta ocupar todo el ancho */
+  min-width: 200px;      /* Pero tampoco dejamos que sea diminuto */
+  padding: 16px 40px;    /* El primer número es arriba/abajo, el segundo es LADOS */
+  
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;   /* Prohibido saltar a dos líneas */
+  
   border: none;
   background: #fff;
   color: #000;
@@ -208,18 +217,6 @@ body {
   z-index: 2;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
   transition: transform 0.1s ease, box-shadow 0.1s ease;
-  
-  /* Esto asegura que el texto no se rompa */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-#buy:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
 }
 
 #buy:active {
@@ -227,22 +224,25 @@ body {
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* MEDIA QUERIES PARA RESPONSIVE */
+/* RESPONSIVE */
 @media (min-width: 768px) {
   #hero img { max-width: 1000px; }
   #cover { max-width: 420px; }
   #buy { 
-    width: auto; 
-    padding: 18px 48px; 
-    font-size: 14px; 
+    font-size: 16px; 
+    padding: 18px 50px; /* Más aire en PC */
+  }
+  #buy:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
   }
 }
 
 @media (max-width: 480px) {
   #buy {
-    width: 85%;      /* Fuerza el ancho en celulares */
-    font-size: 12px;  /* Ajuste fino para que la palabra no toque los bordes */
-    padding: 16px 0;
+    font-size: 13px;      /* Un toque más pequeño en móvil para que no sea gigante */
+    padding: 14px 30px;   /* Reducimos un poco el aire lateral en pantallas muy chicas */
+    min-width: 180px;
   }
 }
 </style>
