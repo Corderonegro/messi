@@ -193,11 +193,12 @@ body {
 #buy {
   position: relative;
   margin-top: auto;
-  width: 100%;
-  max-width: 300px;
+  width: 90%; /* Evita que toque los bordes en pantallas chicas */
+  max-width: 280px; /* Un pelín más estrecho para mayor elegancia */
   padding: 16px 0;
-  font-size: 16px;
+  font-size: 15px; /* Tamaño equilibrado */
   font-weight: 600;
+  letter-spacing: 1px; /* Espaciado sutil para que se vea más pro */
   border: none;
   background: #fff;
   color: #000;
@@ -205,27 +206,48 @@ body {
   cursor: pointer;
   z-index: 2;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  
-  /* Agregamos una transición suave para que no sea brusco */
   transition: transform 0.1s ease, box-shadow 0.1s ease;
+  
+  /* Centrado total del texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
 }
 
-/* Efecto al pasar el mouse (opcional, para que sepa que es clickeable) */
-#buy:hover {
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  transform: translateY(-2px);
+/* Efecto al pasar el mouse (PC) */
+@media (hover: hover) {
+  #buy:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+  }
 }
 
 /* LA ANIMACIÓN AL HACER CLICK */
 #buy:active {
-  transform: scale(0.95); /* El botón se achica un 5% */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* La sombra se reduce */
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* RESPONSIVE */
 @media (min-width: 768px) {
   #hero img { max-width: 1000px; }
   #cover { max-width: 420px; }
-  #buy { width: auto; padding: 18px 36px; }
+  #buy { 
+    width: auto; 
+    max-width: none;
+    padding: 18px 48px; 
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  #buy {
+    font-size: 13px; /* Tamaño ideal para "PRÓXIMAMENTE" en mobile */
+    max-width: 240px;
+    padding: 14px 0;
+  }
 }
 </style>
 </head>
