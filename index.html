@@ -190,14 +190,16 @@ body {
 }
 
 /* BOTÓN */
+/* BOTÓN CORREGIDO */
 #buy {
   position: relative;
   margin-top: auto;
-  width: 100%;
-  max-width: 300px;
-  padding: 16px 0;
-  font-size: 16px;
+  width: 90%;          /* Ocupa casi todo el ancho en mobile */
+  max-width: 300px;    /* Límite para que no se vea gigante */
+  padding: 18px 0;
+  font-size: 14px;     /* Bajamos a 14px para que entre "PRÓXIMAMENTE" */
   font-weight: 600;
+  letter-spacing: 1.5px;
   border: none;
   background: #fff;
   color: #000;
@@ -205,27 +207,43 @@ body {
   cursor: pointer;
   z-index: 2;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  
-  /* Agregamos una transición suave para que no sea brusco */
   transition: transform 0.1s ease, box-shadow 0.1s ease;
+  
+  /* Esto asegura que el texto no se rompa */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-/* Efecto al pasar el mouse (opcional, para que sepa que es clickeable) */
 #buy:hover {
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
   transform: translateY(-2px);
 }
 
-/* LA ANIMACIÓN AL HACER CLICK */
 #buy:active {
-  transform: scale(0.95); /* El botón se achica un 5% */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* La sombra se reduce */
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
+/* MEDIA QUERIES PARA RESPONSIVE */
 @media (min-width: 768px) {
   #hero img { max-width: 1000px; }
   #cover { max-width: 420px; }
-  #buy { width: auto; padding: 18px 36px; }
+  #buy { 
+    width: auto; 
+    padding: 18px 48px; 
+    font-size: 16px; 
+  }
+}
+
+@media (max-width: 480px) {
+  #buy {
+    width: 85%;      /* Fuerza el ancho en celulares */
+    font-size: 12px;  /* Ajuste fino para que la palabra no toque los bordes */
+    padding: 16px 0;
+  }
 }
 </style>
 </head>
