@@ -193,12 +193,11 @@ body {
 #buy {
   position: relative;
   margin-top: auto;
-  width: 90%; /* Evita que toque los bordes en pantallas chicas */
-  max-width: 280px; /* Un pelín más estrecho para mayor elegancia */
+  width: 100%;
+  max-width: 300px;
   padding: 16px 0;
-  font-size: 15px; /* Tamaño equilibrado */
+  font-size: 16px;
   font-weight: 600;
-  letter-spacing: 1px; /* Espaciado sutil para que se vea más pro */
   border: none;
   background: #fff;
   color: #000;
@@ -206,28 +205,21 @@ body {
   cursor: pointer;
   z-index: 2;
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
   
-  /* Centrado total del texto */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  white-space: nowrap;
+  /* Agregamos una transición suave para que no sea brusco */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-/* Efecto al pasar el mouse (PC) */
-@media (hover: hover) {
-  #buy:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    transform: translateY(-2px);
-  }
+/* Efecto al pasar el mouse (opcional, para que sepa que es clickeable) */
+#buy:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
 }
 
 /* LA ANIMACIÓN AL HACER CLICK */
 #buy:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transform: scale(0.95); /* El botón se achica un 5% */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* La sombra se reduce */
 }
 </style>
 </head>
